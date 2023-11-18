@@ -1,10 +1,23 @@
+import { trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  animations: [
+    trigger('divState', [
+      
+    ])
+  ]
 })
 export class AppComponent {
-  title = 'animations';
+  list = ['Milk', 'Sugar', 'Bread'];
+
+    onAdd(item) {
+      this.list.push(item);
+    }
+
+    onDelete(item) {
+      this.list.splice(this.list.indexOf(item), 1);
+    }
 }
